@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0B6E5B">
-<meta name="description" content="Cinq applications simples pour boutiques, restaurants, locations, daaras et navettes au Sénégal. 7 jours d'essai gratuit, dès 5 000 F/mois.">
+<meta name="description" content="Sept applications simples pour boutiques, restaurants, ateliers de couture, salons de beauté, locations, daaras et navettes au Sénégal. 7 jours d'essai gratuit, dès 5 000 F/mois.">
 <meta property="og:title" content="Seck Apps — Votre business dans votre téléphone">
-<meta property="og:description" content="Boutique, restaurant, location, daara, navette. Dès 5 000 F/mois. 7 jours d'essai gratuit. Wave et Orange Money.">
+<meta property="og:description" content="Boutique, restaurant, couture, salon de beauté, location, daara, navette. Dès 5 000 F/mois. 7 jours d'essai gratuit. Wave et Orange Money.">
 <meta property="og:image" content="https://seckappssn-maker.github.io/seckappssn/copertina.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -28,6 +28,8 @@
   --loyer:#A8482A;    --loyer-2:#F6C7A8;
   --daara:#2B3170;    --daara-2:#B9BEF5;
   --navette:#0F5D44;  --navette-2:#F2B33D;
+  --couture:#232E78;  --couture-2:#E8B04B;
+  --salon:#6A1F5A;    --salon-2:#F2B08F;
   --display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
   --body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   color-scheme:light;
@@ -75,20 +77,21 @@ a{color:inherit}
 
 /* Les cinq écrans en éventail */
 .fan{display:flex;justify-content:center;align-items:flex-end;height:250px;margin-top:8px;position:relative}
-.fan .ph{width:132px;flex:none;margin-inline:-14px;transform-origin:bottom center;box-shadow:0 18px 40px rgba(0,0,0,.35)}
-.fan .ph:nth-child(1){transform:rotate(-14deg) translateY(28px)}
-.fan .ph:nth-child(2){transform:rotate(-7deg) translateY(8px)}
-.fan .ph:nth-child(3){transform:translateY(-6px);z-index:3}
-.fan .ph:nth-child(4){transform:rotate(7deg) translateY(8px);z-index:2}
-.fan .ph:nth-child(5){transform:rotate(14deg) translateY(28px);z-index:1}
-.fan .ph:nth-child(2){z-index:2}
+.fan .ph{width:124px;flex:none;margin-inline:-16px;transform-origin:bottom center;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.fan .ph:nth-child(1){transform:rotate(-18deg) translateY(46px);z-index:1}
+.fan .ph:nth-child(2){transform:rotate(-12deg) translateY(22px);z-index:2}
+.fan .ph:nth-child(3){transform:rotate(-6deg) translateY(6px);z-index:3}
+.fan .ph:nth-child(4){transform:translateY(-4px);z-index:4}
+.fan .ph:nth-child(5){transform:rotate(6deg) translateY(6px);z-index:3}
+.fan .ph:nth-child(6){transform:rotate(12deg) translateY(22px);z-index:2}
+.fan .ph:nth-child(7){transform:rotate(18deg) translateY(46px);z-index:1}
 @media (prefers-reduced-motion:no-preference){
   .fan .ph{animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
-  .fan .ph:nth-child(2){animation-delay:.06s}.fan .ph:nth-child(3){animation-delay:.12s}
-  .fan .ph:nth-child(4){animation-delay:.18s}.fan .ph:nth-child(5){animation-delay:.24s}
+  .fan .ph:nth-child(2){animation-delay:.05s}.fan .ph:nth-child(3){animation-delay:.1s}.fan .ph:nth-child(4){animation-delay:.15s}
+  .fan .ph:nth-child(5){animation-delay:.2s}.fan .ph:nth-child(6){animation-delay:.25s}.fan .ph:nth-child(7){animation-delay:.3s}
 }
 @keyframes rise{from{translate:0 40px}to{translate:0 0}}
-@media (max-width:520px){.fan{height:200px}.fan .ph{width:104px;margin-inline:-18px}}
+@media (max-width:520px){.fan{height:170px}.fan .ph{width:76px;margin-inline:-12px}.fan .scr{font-size:7px}.fan .scr .bar{font-size:8px;padding:8px 5px 6px}.fan .scr .tot{font-size:8px}}
 
 /* ---------- Téléphone (mini écran) ---------- */
 .ph{background:#0E1512;border-radius:22px;padding:6px;aspect-ratio:9/18.5;max-width:100%}
@@ -110,7 +113,7 @@ a{color:inherit}
 /* ---------- Bandeau de navigation par métier ---------- */
 .pick{padding-block:30px 6px}
 .pick h2{font-size:clamp(26px,5vw,38px);font-weight:800;letter-spacing:-.02em}
-.chipnav{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:16px}
+.chipnav{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
 .chipnav a{display:flex;flex-direction:column;gap:6px;text-decoration:none;background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:14px 12px;min-width:0}
 .chipnav b{font-family:var(--display);font-size:17px;line-height:1.1}
 .chipnav span{font-size:13px;color:var(--muted)}
@@ -155,12 +158,13 @@ a{color:inherit}
 .app .btns{display:flex;flex-wrap:wrap;gap:10px}
 .app .btns .btn{flex:1 1 170px}
 .app .btn-line{color:var(--c)}
-.more{font-weight:700;color:var(--c);text-underline-offset:3px}
 .boutique{--c:var(--boutique);--c2:var(--boutique-2)}
 .resto{--c:var(--resto);--c2:var(--resto-2)}
 .loyer{--c:var(--loyer);--c2:var(--loyer-2)}
 .daara{--c:var(--daara);--c2:var(--daara-2)}
 .navette{--c:var(--navette);--c2:var(--navette-2)}
+.couture{--c:var(--couture);--c2:var(--couture-2)}
+.salon{--c:var(--salon);--c2:var(--salon-2)}
 .app:nth-child(even){grid-template-columns:.95fr 1.05fr}
 .app:nth-child(even) .side{order:2}
 @media (max-width:820px){
@@ -256,7 +260,7 @@ footer b{color:var(--ink)}
   <div class="wrap">
     <span class="eyebrow">Fait au Sénégal, pour le Sénégal</span>
     <h1>Votre business,<br><em>dans votre téléphone.</em></h1>
-    <p class="lead">Cinq applications simples pour la boutique, le restaurant, la location, la daara et la navette. Tout est noté, calculé et sauvegardé en ligne. En français, avec le wolof.</p>
+    <p class="lead">Sept applications simples pour la boutique, le restaurant, l'atelier de couture, le salon de beauté, la location, la daara et la navette. Tout est noté, calculé et sauvegardé en ligne. En français, avec le wolof.</p>
     <div class="facts">
       <span>7 jours gratuits</span><span>Dès 5 000 F / mois</span><span>Wave · Orange Money</span><span>Téléphone · tablette · ordinateur</span>
     </div>
@@ -264,7 +268,7 @@ footer b{color:var(--ink)}
       <a class="btn btn-gold" data-msg="Bonjour Seck Apps, je veux essayer une application 7 jours gratuits." href="#">
         <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg>
         Essayer gratuitement</a>
-      <a class="btn btn-line" href="#apps">Voir les 5 applications</a>
+      <a class="btn btn-line" href="#apps">Voir les 7 applications</a>
     </div>
 
     <div class="fan" aria-hidden="true">
@@ -274,9 +278,15 @@ footer b{color:var(--ink)}
       <div class="ph loyer"><div class="scr"><div class="bar">Kër Loyer</div><div class="in">
         <div class="row"><span>Appart. A</span><span class="ok">Payé</span></div><div class="row"><span>Magasin 2</span><span class="late">Retard</span></div><div class="row"><span>Meublé</span><span>3 nuits</span></div>
         <div class="tot"><span>Octobre</span><span>450 000</span></div></div></div></div>
+      <div class="ph couture"><div class="scr"><div class="bar">Atelier Couture</div><div class="in">
+        <div class="row"><span>Grand boubou</span><span class="pill">Couture</span></div><div class="row"><span>Taille basse</span><span class="ok">Prêt</span></div><div class="row"><span>Kaftan</span><span>Coupe</span></div>
+        <div class="tot"><span>Korité</span><span>147 j</span></div></div></div></div>
       <div class="ph resto"><div class="scr"><div class="bar">Teranga Resto</div><div class="in">
         <div class="tiles"><div class="tile">Thiéb</div><div class="tile">Yassa</div><div class="tile">Mafé</div><div class="tile">Bissap</div></div>
         <div class="tot"><span>Table 4</span><span>7 000 F</span></div></div></div></div>
+      <div class="ph salon"><div class="scr"><div class="bar">Salon Beauté</div><div class="in">
+        <div class="row"><span>09:30 Nattes</span><span class="ok">Payé</span></div><div class="row"><span>11:00 Box braids</span><span>Aïda</span></div><div class="row"><span>14:00 Manucure</span><span class="pill">Prévu</span></div>
+        <div class="tot"><span>Caisse</span><span>27 000 F</span></div></div></div></div>
       <div class="ph daara"><div class="scr"><div class="bar">Daara &amp; École</div><div class="in">
         <div class="row"><span>Moussa</span><span class="ok">Payé</span></div><div class="row"><span>Awa</span><span class="late">Reste 2 000</span></div><div class="row"><span>Cheikh</span><span class="ok">Payé</span></div>
         <div class="tot"><span>Élèves</span><span>86</span></div></div></div></div>
@@ -296,6 +306,8 @@ footer b{color:var(--ink)}
     <nav class="chipnav" aria-label="Applications">
       <a href="#boutique" style="--c:var(--boutique)"><i></i><b>Carnet Boutique</b><span>Commerce, alimentation, quincaillerie</span></a>
       <a href="#resto" style="--c:var(--resto)"><i></i><b>Teranga Resto</b><span>Restaurant, fast-food, dibiterie</span></a>
+      <a href="#couture" style="--c:var(--couture)"><i></i><b>Atelier Couture</b><span>Tailleur, couturière, atelier</span></a>
+      <a href="#salon" style="--c:var(--salon)"><i></i><b>Salon Beauté</b><span>Coiffure, tresses, ongles, barbier</span></a>
       <a href="#loyer" style="--c:var(--loyer)"><i></i><b>Kër Loyer</b><span>Propriétaire, agence, meublés</span></a>
       <a href="#daara" style="--c:var(--daara)"><i></i><b>Daara &amp; École</b><span>Daara, franco-arabe, école privée</span></a>
       <a href="#navette" style="--c:var(--navette)"><i></i><b>Teranga Navette</b><span>Transport, navette, aéroport</span></a>
@@ -369,9 +381,75 @@ footer b{color:var(--ink)}
         </div>
         <div class="btns">
           <a class="btn btn-wa" data-msg="Bonjour, je veux essayer Teranga Resto 7 jours gratuits pour mon restaurant." href="#">Essayer 7 jours</a>
-          <a class="btn btn-line" href="https://seckappssn-maker.github.io/terangaresto/" target="_blank" rel="noopener">Ouvrir l'app</a>
+          <a class="btn btn-line" href="https://seckappssn-maker.github.io/terangaresto/menu.html" target="_blank" rel="noopener">Voir un menu exemple</a>
         </div>
-        <a class="more" href="https://seckappssn-maker.github.io/terangaresto/menu.html" target="_blank" rel="noopener">Voir un exemple de page menu pour vos clients →</a>
+      </div>
+    </article>
+
+    <!-- COUTURE -->
+    <article class="app couture" id="couture">
+      <div class="side">
+        <div class="tagline"><span class="badge">Nouveau</span></div>
+        <p class="for">Pour tailleurs, couturières et ateliers de couture</p>
+        <h3>Atelier Couture</h3>
+        <p class="pitch">Les mesures, les commandes et les avances, sans le cahier. Vos clients suivent leur habit en ligne.</p>
+        <div class="phone-wrap"><div class="ph"><div class="scr"><div class="bar">Commandes <small>Korité · 147 j</small></div><div class="in">
+          <div class="row"><span>Mamadou · Grand boubou</span><span class="pill">Finition</span></div>
+          <div class="row"><span>Awa · Taille basse</span><span class="ok">Prêt</span></div>
+          <div class="row"><span>Fatou · Robe</span><span>Couture</span></div>
+          <div class="row"><span>Ibrahima · Kaftan</span><span class="late">1 j de retard</span></div>
+          <div class="row" style="background:#FDF1D8"><span>Mesures · Awa</span><span>12 ✓</span></div>
+          <div class="tot"><span>Reste à encaisser</span><span>93 000 F</span></div></div></div></div></div>
+      </div>
+      <div class="main">
+        <ul class="feat">
+          <li><span><b>Mesures</b> homme, femme et enfant, gardées pour toutes les prochaines commandes</span></li>
+          <li><span><b>Commandes</b> avec la photo du modèle, le tissu et la date de livraison</span></li>
+          <li><span><b>Avances et reste à payer</b>, rappel de paiement sur WhatsApp</span></li>
+          <li><span>Étapes <b>Coupe, Couture, Finition, Prêt</b> et message « c'est prêt » au client</span></li>
+          <li><span><b>Vos modèles en vitrine</b> avec photos et prix : les clients commandent</span></li>
+          <li><span>Compte à rebours <b>Korité et Tabaski</b></span></li>
+        </ul>
+        <div class="extra"><strong>Inclus :</strong><span>l'espace client. Avec son numéro et son code, le client voit ses commandes, envoie la photo du modèle et ses mesures, prend rendez-vous.</span></div>
+        <div class="price"><div><span class="amount">5 000 F</span> <span class="per">/ mois</span></div>
+          <p class="year">Ou <b>50 000 F l'année</b> : 2 mois offerts</p></div>
+        <div class="btns">
+          <a class="btn btn-wa" data-msg="Bonjour, je veux essayer Atelier Couture 7 jours gratuits pour mon atelier." href="#">Essayer 7 jours</a>
+          <a class="btn btn-line" href="https://seckappssn-maker.github.io/atelier-couture/" target="_blank" rel="noopener">Ouvrir l'app</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- SALON -->
+    <article class="app salon" id="salon">
+      <div class="side">
+        <div class="tagline"><span class="badge">Nouveau</span></div>
+        <p class="for">Pour salons de coiffure, tresses, onglerie, maquillage, barbiers</p>
+        <h3>Salon Beauté</h3>
+        <p class="pitch">L'agenda du salon, la caisse du jour et les clientes fidèles. Elles réservent en ligne.</p>
+        <div class="phone-wrap"><div class="ph"><div class="scr"><div class="bar">Aujourd'hui <small>3 coiffeuses</small></div><div class="in">
+          <div class="row"><span>09:30 · Nattes collées</span><span class="ok">Payé</span></div>
+          <div class="row"><span>11:00 · Box braids</span><span>Aïda</span></div>
+          <div class="row"><span>14:00 · Manucure gel</span><span class="pill">Réservé</span></div>
+          <div class="row"><span>15:30 · Tissage</span><span>Bineta</span></div>
+          <div class="row" style="background:#FBE7DC"><span>Fidélité · Ndèye</span><span>7 / 10</span></div>
+          <div class="tot"><span>Caisse du jour</span><span>27 000 F</span></div></div></div></div></div>
+      </div>
+      <div class="main">
+        <ul class="feat">
+          <li><span><b>Agenda</b> par jour, par coiffeuse, avec rappel WhatsApp à la cliente</span></li>
+          <li><span><b>Caisse du jour</b> : espèces, Wave, Orange Money, et ce que chaque coiffeuse a fait</span></li>
+          <li><span><b>Services et prix</b> avec photos : tresses, mèches, ongles, henné, barbier</span></li>
+          <li><span><b>Carte de fidélité</b> : par exemple 10 visites = 1 brushing offert</span></li>
+          <li><span>Reçu envoyé sur WhatsApp, totaux de la semaine et du mois</span></li>
+        </ul>
+        <div class="extra"><strong>Inclus :</strong><span>votre page de réservation. Les clientes choisissent le service, le jour, l'heure et la coiffeuse. Vous confirmez d'un geste.</span></div>
+        <div class="price"><div><span class="amount">5 000 F</span> <span class="per">/ mois</span></div>
+          <p class="year">Ou <b>50 000 F l'année</b> : 2 mois offerts</p></div>
+        <div class="btns">
+          <a class="btn btn-wa" data-msg="Bonjour, je veux essayer Salon Beauté 7 jours gratuits pour mon salon." href="#">Essayer 7 jours</a>
+          <a class="btn btn-line" href="https://seckappssn-maker.github.io/salon-beaute/" target="_blank" rel="noopener">Ouvrir l'app</a>
+        </div>
       </div>
     </article>
 
@@ -529,6 +607,7 @@ footer b{color:var(--ink)}
       <details><summary>Je ne lis pas bien le français.</summary><p>Les apps ont un bouton wolof et de grosses écritures. On vous explique aussi par vocal WhatsApp.</p></details>
       <details><summary>Que se passe-t-il si je ne paie pas ?</summary><p>Après la date de fin, vous avez 3 jours. Ensuite l'app se met en pause : vos données restent gardées et vous pouvez les regarder. Dès que vous payez, tout repart.</p></details>
       <details><summary>Je peux arrêter quand je veux ?</summary><p>Oui. Vous payez mois par mois, sans contrat. Vous arrêtez quand vous voulez.</p></details>
+      <details><summary>Mes clients peuvent-ils réserver ou commander en ligne ?</summary><p>Oui. Teranga Resto, Atelier Couture, Salon Beauté, Kër Loyer et Teranga Navette donnent une page à vos clients : ils voient vos photos et vos prix, réservent ou commandent, et vous recevez tout dans l'app.</p></details>
       <details><summary>J'ai deux boutiques ou deux restaurants.</summary><p>Chaque boutique ou restaurant a son propre abonnement. Écrivez-nous, on vous aide à tout mettre en place.</p></details>
     </div>
   </section>
@@ -543,7 +622,7 @@ footer b{color:var(--ink)}
   </section>
 </main>
 
-<footer><b>Seck Apps</b> · Sénégal · Applications pour commerçants, restaurants, propriétaires, daaras et transporteurs</footer>
+<footer><b>Seck Apps</b> · Sénégal · Applications pour commerçants, restaurants, couturiers, salons de beauté, propriétaires, daaras et transporteurs</footer>
 
 <div class="sticky"><a class="btn btn-wa" data-msg="Bonjour Seck Apps, je veux essayer une application 7 jours gratuits." href="#">
   <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg>
