@@ -147,7 +147,7 @@ a{color:inherit}
 .feat li::before{content:"";width:22px;height:22px;border-radius:7px;background:var(--c) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/14px no-repeat;margin-top:1px}
 .feat b{font-weight:700}
 .extra{background:var(--gold-soft);border-radius:14px;padding:12px 14px;font-size:15px;display:flex;gap:10px;align-items:flex-start}
-.extra strong{font-family:var(--display)}
+.extra strong{font-family:var(--display);white-space:nowrap}
 .price{border-top:2px dashed var(--line);padding-top:16px;display:flex;flex-direction:column;gap:6px}
 .amount{font-family:var(--display);font-weight:800;font-size:40px;letter-spacing:-.02em;color:var(--c);font-variant-numeric:tabular-nums;line-height:1}
 .per{font-size:16px;color:var(--muted);font-weight:600}
@@ -169,6 +169,29 @@ a{color:inherit}
 .navette{--c:var(--navette);--c2:var(--navette-2)}
 .couture{--c:var(--couture);--c2:var(--couture-2)}
 .salon{--c:var(--salon);--c2:var(--salon-2)}
+.howto{border:1.5px solid var(--c);border-radius:14px;padding:0;border-bottom-width:1.5px}
+.howto>summary{padding:12px 14px;color:var(--c);font-weight:800;font-size:16px}
+.howto>summary::after{color:var(--c)}
+.howto[open]>summary{border-bottom:1px dashed var(--line)}
+.howin{padding:12px 14px 14px;display:flex;flex-direction:column;gap:12px}
+.howin .ht{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c);padding:0;margin:0}
+.hsteps{margin:4px 0 0;padding-left:20px;display:grid;gap:4px;font-size:15px}
+.hsteps li::marker{color:var(--c);font-weight:800}
+.hgroups{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hgroups ul{margin:4px 0 0;padding-left:18px;display:grid;gap:3px;font-size:15px;color:var(--ink)}
+.hgroups li::marker{color:var(--c)}
+@media (max-width:560px){.hgroups{grid-template-columns:1fr}}
+.tiers{display:grid;gap:10px}
+.tier{border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.tier.hi{border-color:var(--c);background:color-mix(in srgb,var(--c) 6%,white)}
+.tier .th{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px}
+.tier .n{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--c);min-width:84px}
+.tier .th b{font-family:var(--display);font-size:24px;font-variant-numeric:tabular-nums;line-height:1}
+.tier .th small{color:var(--muted);font-weight:600}
+.tier .plus{font-size:14px;font-weight:700;color:var(--muted)}
+.tier ul{margin:0;padding-left:18px;display:grid;gap:3px;font-size:15px}
+.tier li::marker{color:var(--c)}
+.more{font-weight:700;color:var(--c);text-underline-offset:3px}
 .tphone{--c:var(--tphone);--c2:var(--tphone-2)}
 .sphoto{--c:var(--sphoto);--c2:var(--sphoto-2)}
 .app:nth-child(even){grid-template-columns:.95fr 1.05fr}
@@ -355,6 +378,7 @@ footer b{color:var(--ink)}
           <li><span>Prix lu à haute voix, gros boutons, bouton <b>wolof</b></span></li>
           <li><span>S'ouvre même <b>sans internet</b></span></li>
         </ul>
+        <details class="howto"><summary>Tout ce que fait l'app</summary><div class="howin"><p class="ht">Comment ça marche</p><ol class="hsteps"><li>Créez votre compte avec votre numéro de téléphone.</li><li>Ajoutez vos articles et leurs prix, ou scannez leur code-barres.</li><li>À chaque vente, touchez les articles : l'app calcule le total, la monnaie et le bénéfice.</li><li>Le soir, fermez la caisse et voyez ce que vous avez gagné.</li></ol><div class="hgroups"><div><p class="ht">Vendre</p><ul><li>Vente rapide en touchant les articles, même à la pièce</li><li>Scanner le code-barres pour vendre plus vite</li><li>Mode caisse pour tablette et POS Android</li><li>Ticket 58 mm avec QR Wave pour payer</li><li>Prix lu à haute voix</li></ul></div><div><p class="ht">Dettes et crédit</p><ul><li>Carnet des dettes : qui doit combien, depuis quand</li><li>Rappel de paiement envoyé sur WhatsApp</li><li>Vos fournisseurs et la marchandise qui arrive</li></ul></div><div><p class="ht">Stock</p><ul><li>Ce qui reste en boutique</li><li>Ce qu'il faut racheter</li><li>Étiquettes prix à imprimer</li></ul></div><div><p class="ht">Argent</p><ul><li>Dépenses de la boutique</li><li>Bénéfice sur les ventes et bénéfice net</li><li>Caisse du soir et rapport PDF</li><li>PDF de tout le carnet, à garder</li></ul></div><div><p class="ht">Pratique</p><ul><li>Bouton wolof, gros boutons</li><li>S'ouvre même sans internet</li><li>Tout est sauvegardé en ligne</li></ul></div></div></div></details>
         <div class="price"><div><span class="amount">5 000 F</span> <span class="per">/ mois</span></div>
           <p class="year">Ou <b>50 000 F l'année</b> : 2 mois offerts</p></div>
         <div class="btns">
@@ -385,18 +409,25 @@ footer b{color:var(--ink)}
           <li><span>Paiement mixte (espèces + Wave) et <b>addition partagée</b> entre amis</span></li>
         </ul>
         <div class="extra"><strong>Inclus :</strong><span>votre page menu avec photos, vos clients commandent sur WhatsApp.</span></div>
+        <details class="howto"><summary>Tout ce que fait l'app</summary><div class="howin"><p class="ht">Comment ça marche</p><ol class="hsteps"><li>Ajoutez vos plats avec photos et prix, rangés par zones (plats, boissons…).</li><li>Le caissier touche les plats : sur place à une table, à emporter ou en livraison.</li><li>La commande part en cuisine : sur l'écran cuisine ou sur un bon imprimé.</li><li>Le client paie en espèces, Wave ou Orange Money, ou un mélange.</li></ol><div class="hgroups"><div><p class="ht">Caisse</p><ul><li>Grandes photos des plats, très rapide quand il y a du monde</li><li>Tables, à emporter sans numéro, livraisons</li><li>Paiement mixte et addition partagée entre amis</li><li>Tickets de caisse</li></ul></div><div><p class="ht">Cuisine et équipe</p><ul><li>Écran cuisine : la commande disparaît quand elle est prête</li><li>Chaque employé a son code et voit seulement son travail</li><li>Le livreur reçoit la livraison sur WhatsApp, sans code</li></ul></div><div><p class="ht">Gestion</p><ul><li>Clients et dettes</li><li>Dépenses et bénéfice</li><li>Stock : riz, huile, gaz… (Pro)</li><li>Personnel : salaires et avances (Pro)</li><li>Abonnés repas au mois et événements traiteur (Pro)</li></ul></div><div><p class="ht">Votre page menu</p><ul><li>Un lien à vous, à partager sur WhatsApp</li><li>Photos, prix, plat du jour, plats épuisés</li><li>Le client commande et le message arrive sur votre WhatsApp</li><li>En français et en wolof</li></ul></div></div></div></details>
         <div class="price">
-          <div class="formulas">
-            <div class="formula"><span class="n">Essentiel</span><b>5 000 F</b><span>Caisse, tables, menu</span></div>
-            <div class="formula hi"><span class="n">Pro</span><b>10 000 F</b><span>+ écran cuisine</span></div>
-            <div class="formula"><span class="n">Premium</span><b>15 000 F</b><span>+ serveurs, patron à distance</span></div>
+          <div class="tiers">
+            <div class="tier"><div class="th"><span class="n">Essentiel</span><b>5 000 F</b><small>/ mois</small></div>
+              <ul><li>Codes : <b>patron</b> et <b>caissier</b></li><li>Caisse rapide avec photos, tables, à emporter</li><li>Livraisons envoyées sur WhatsApp</li><li>Menu, tickets, paiement mixte, addition partagée</li><li>Page menu pour vos clients</li></ul></div>
+            <div class="tier hi"><div class="th"><span class="n">Pro</span><b>10 000 F</b><small>/ mois</small></div>
+              <p class="plus">Tout l'Essentiel, plus :</p>
+              <ul><li>Code <b>cuisine</b> : écran cuisine, la commande part quand elle est prête</li><li><b>Stock</b> : riz, huile, gaz… alerte quand ça finit</li><li><b>Personnel</b> : salaires et avances</li><li><b>Abonnés</b> : clients qui paient les repas au mois</li><li><b>Événements</b> : commandes traiteur, mariages, baptêmes</li></ul></div>
+            <div class="tier"><div class="th"><span class="n">Premium</span><b>15 000 F</b><small>/ mois</small></div>
+              <p class="plus">Tout le Pro, plus :</p>
+              <ul><li>Code <b>serveur</b> : chaque serveur prend les commandes à table sur son téléphone</li><li>Le patron suit tout à distance</li></ul></div>
           </div>
-          <p class="year">Prix par mois et par restaurant.</p>
+          <p class="year">Prix par mois et par restaurant. Les livreurs n'ont pas besoin de code : ils reçoivent les livraisons sur WhatsApp.</p>
         </div>
         <div class="btns">
           <a class="btn btn-wa" data-msg="Bonjour, je veux essayer Teranga Resto 7 jours gratuits pour mon restaurant." href="#">Essayer 7 jours</a>
-          <a class="btn btn-line" href="https://seckappssn-maker.github.io/terangaresto/menu.html" target="_blank" rel="noopener">Voir un menu exemple</a>
+          <a class="btn btn-line" href="https://seckappssn-maker.github.io/terangaresto/" target="_blank" rel="noopener">Ouvrir l'app</a>
         </div>
+        <a class="more" href="https://seckappssn-maker.github.io/terangaresto/menu.html" target="_blank" rel="noopener">Voir un exemple de page menu pour vos clients →</a>
       </div>
     </article>
 
@@ -425,6 +456,7 @@ footer b{color:var(--ink)}
           <li><span>Compte à rebours <b>Korité et Tabaski</b></span></li>
         </ul>
         <div class="extra"><strong>Inclus :</strong><span>l'espace client. Avec son numéro et son code, le client voit ses commandes, envoie la photo du modèle et ses mesures, prend rendez-vous.</span></div>
+        <details class="howto"><summary>Tout ce que fait l'app</summary><div class="howin"><p class="ht">Comment ça marche</p><ol class="hsteps"><li>Notez le client et ses mesures une seule fois.</li><li>Pour chaque habit : photo du modèle, tissu, prix, avance et date de livraison.</li><li>Suivez les étapes : Coupe, Couture, Finition, Prêt.</li><li>Quand c'est prêt, le client reçoit un message sur WhatsApp.</li></ol><div class="hgroups"><div><p class="ht">Commandes</p><ul><li>Mesures homme, femme et enfant, gardées</li><li>Photo du modèle et du tissu</li><li>À livrer bientôt, et retards</li><li>Compte à rebours Korité et Tabaski</li></ul></div><div><p class="ht">Argent</p><ul><li>Avances et reste à payer</li><li>Rappel de paiement sur WhatsApp</li></ul></div><div><p class="ht">Clients</p><ul><li>Catalogue de vos modèles avec photos et prix</li><li>Rendez-vous</li><li>Espace client : avec son numéro et son code, le client voit ses commandes, envoie son modèle et ses mesures</li></ul></div></div></div></details>
         <div class="price"><div><span class="amount">5 000 F</span> <span class="per">/ mois</span></div>
           <p class="year">Ou <b>50 000 F l'année</b> : 2 mois offerts</p></div>
         <div class="btns">
@@ -458,6 +490,7 @@ footer b{color:var(--ink)}
           <li><span>Reçu envoyé sur WhatsApp, totaux de la semaine et du mois</span></li>
         </ul>
         <div class="extra"><strong>Inclus :</strong><span>votre page de réservation. Les clientes choisissent le service, le jour, l'heure et la coiffeuse. Vous confirmez d'un geste.</span></div>
+        <details class="howto"><summary>Tout ce que fait l'app</summary><div class="howin"><p class="ht">Comment ça marche</p><ol class="hsteps"><li>Ajoutez vos services, vos prix et vos coiffeuses.</li><li>Les clientes réservent sur votre page, ou vous notez le rendez-vous.</li><li>Vous confirmez : la cliente reçoit un rappel sur WhatsApp.</li><li>Après le service, encaissez : la caisse du jour se fait toute seule.</li></ol><div class="hgroups"><div><p class="ht">Agenda</p><ul><li>Rendez-vous par jour et par coiffeuse</li><li>Réservations à confirmer</li><li>Rappel WhatsApp à la cliente</li></ul></div><div><p class="ht">Caisse</p><ul><li>Espèces, Wave, Orange Money</li><li>Ce que chaque coiffeuse a fait</li><li>Reçu sur WhatsApp, totaux du mois</li></ul></div><div><p class="ht">Clientes</p><ul><li>Services et prix avec photos : tresses, mèches, ongles, henné, barbier</li><li>Carte de fidélité</li><li>Page de réservation : service, jour, heure, coiffeuse</li></ul></div></div></div></details>
         <div class="price"><div><span class="amount">5 000 F</span> <span class="per">/ mois</span></div>
           <p class="year">Ou <b>50 000 F l'année</b> : 2 mois offerts</p></div>
         <div class="btns">
@@ -491,6 +524,7 @@ footer b{color:var(--ink)}
           <li><span><b>Caisse</b> : espèces, Wave, Orange Money, crédit, et ce que vous gagnez chaque mois</span></li>
         </ul>
         <div class="extra"><strong>Inclus :</strong><span>votre page clients. Sans compte, ils demandent un devis avec photo, suivent leur réparation avec le N° du reçu, achètent ou vous proposent leur téléphone, et discutent le prix.</span></div>
+        <details class="howto"><summary>Tout ce que fait l'app</summary><div class="howin"><p class="ht">Comment ça marche</p><ol class="hsteps"><li>Choisissez votre activité : réparation, vente de téléphones, ou les deux.</li><li>Pour chaque réparation : le client, le téléphone, l'IMEI, la panne et des photos. L'app donne un N° de reçu.</li><li>Quand c'est réparé, le client reçoit « c'est prêt » et son reçu sur WhatsApp.</li><li>Encaissez en espèces, Wave ou Orange Money : la caisse se fait toute seule.</li></ol><div class="hgroups"><div><p class="ht">Réparations</p><ul><li>N° de reçu, IMEI, panne et photos</li><li>Technicien et garantie</li><li>Message « c'est prêt » sur WhatsApp</li></ul></div><div><p class="ht">Vente</p><ul><li>Téléphones avec photos, batterie, état et prix</li><li>Prix minimum secret pour discuter le prix</li><li>Rachat des téléphones que les clients proposent</li></ul></div><div><p class="ht">Stock</p><ul><li>Pièces : écrans, batteries, connecteurs</li><li>Alerte quand il en reste peu</li></ul></div><div><p class="ht">Argent</p><ul><li>Espèces, Wave, Orange Money et crédit</li><li>Ce que vous gagnez chaque mois</li></ul></div><div><p class="ht">Votre page clients</p><ul><li>Sans compte : devis avec photo de la panne</li><li>Suivi de la réparation avec le N° du reçu</li><li>Acheter un téléphone ou proposer le sien</li><li>Discuter le prix</li></ul></div></div></div></details>
         <div class="price"><div><span class="amount">5 000 F</span> <span class="per">/ mois</span></div>
           <p class="year">Ou <b>50 000 F l'année</b> : 2 mois offerts</p></div>
         <div class="btns">
@@ -523,13 +557,19 @@ footer b{color:var(--ink)}
           <li><span><b>Caisse</b> : espèces, Wave, Orange Money, et le reste à encaisser</span></li>
         </ul>
         <div class="extra"><strong>Inclus :</strong><span>votre page. Les clients voient vos photos et vos prix, réservent sans compte, et récupèrent leurs photos avec leur code. Les photos restent 30 jours en ligne.</span></div>
+        <details class="howto"><summary>Tout ce que fait l'app</summary><div class="howin"><p class="ht">Comment ça marche</p><ol class="hsteps"><li>Créez vos séances : mariage, baptême, Magal, Tabaski, Korité, studio…</li><li>Notez l'acompte : l'app montre le reste à payer.</li><li>Après la séance, mettez les photos dans l'espace du client.</li><li>Le client entre avec son code et enregistre ses photos, en bonne qualité.</li></ol><div class="hgroups"><div><p class="ht">Séances</p><ul><li>Mariage, baptême, événements, studio</li><li>Acompte et reste à payer</li><li>Annonces d'événements avec places limitées, à partager sur WhatsApp</li></ul></div><div><p class="ht">Clients</p><ul><li>Un espace par client avec son code</li><li>Photos en bonne qualité, pas écrasées par WhatsApp</li><li>Photos en ligne 30 jours</li></ul></div><div><p class="ht">Vitrine</p><ul><li>Vos plus belles photos</li><li>Seulement avec l'accord du client</li><li>Vos prix</li></ul></div><div><p class="ht">Argent</p><ul><li>Espèces, Wave, Orange Money</li><li>Reste à encaisser</li></ul></div></div></div></details>
         <div class="price">
-          <div class="formulas">
-            <div class="formula"><span class="n">Essentiel</span><b>5 000 F</b><span>500 photos en ligne</span></div>
-            <div class="formula hi"><span class="n">Pro</span><b>10 000 F</b><span>2 000 photos en ligne</span></div>
-            <div class="formula"><span class="n">Premium</span><b>15 000 F</b><span>5 000 photos en ligne</span></div>
+          <div class="tiers">
+            <div class="tier"><div class="th"><span class="n">Essentiel</span><b>5 000 F</b><small>/ mois</small></div>
+              <ul><li><b>500 photos</b> en ligne</li><li>Séances, clients, caisse</li><li>Votre page : vitrine, prix et réservations</li><li>Espace client avec code</li></ul></div>
+            <div class="tier hi"><div class="th"><span class="n">Pro</span><b>10 000 F</b><small>/ mois</small></div>
+              <p class="plus">Tout l'Essentiel, plus :</p>
+              <ul><li><b>2 000 photos</b> en ligne</li></ul></div>
+            <div class="tier"><div class="th"><span class="n">Premium</span><b>15 000 F</b><small>/ mois</small></div>
+              <p class="plus">Tout le Pro, plus :</p>
+              <ul><li><b>5 000 photos</b> en ligne</li></ul></div>
           </div>
-          <p class="year">Prix par mois et par studio.</p>
+          <p class="year">Prix par mois et par studio. Les photos restent 30 jours en ligne.</p>
         </div>
         <div class="btns">
           <a class="btn btn-wa" data-msg="Bonjour, je veux essayer Studio Photo 7 jours gratuits pour mon studio." href="#">Essayer 7 jours</a>
@@ -562,6 +602,7 @@ footer b{color:var(--ink)}
           <li><span><b>Dépenses</b> de chaque maison : ce qui reste vraiment</span></li>
         </ul>
         <div class="extra"><strong>Inclus :</strong><span>une page pour vos meublés, avec photos, prix et jours libres. Les clients réservent sur WhatsApp.</span></div>
+        <details class="howto"><summary>Tout ce que fait l'app</summary><div class="howin"><p class="ht">Comment ça marche</p><ol class="hsteps"><li>Ajoutez vos maisons et vos logements : appartements, chambres, magasins, meublés.</li><li>Pour chaque locataire : le loyer, la caution et le contrat.</li><li>Chaque mois, notez qui a payé : l'app montre tout de suite les retards.</li><li>Envoyez le reçu au locataire sur WhatsApp ou en PDF.</li></ol><div class="hgroups"><div><p class="ht">Loyers</p><ul><li>Loyers du mois : qui a payé, qui est en retard</li><li>Rappel au locataire</li><li>Reçu en PDF ou sur WhatsApp</li></ul></div><div><p class="ht">Locataires</p><ul><li>Caution, avec son reçu</li><li>Contrats de location</li><li>Alerte des contrats qui finissent</li></ul></div><div><p class="ht">Meublés</p><ul><li>Séjours à la nuit ou à la semaine</li><li>Votre page de réservation : photos, prix, jours libres</li><li>Les clients demandent sur WhatsApp</li></ul></div><div><p class="ht">Argent</p><ul><li>Dépenses de chaque maison</li><li>Bilan du mois</li><li>PDF avec tout, à envoyer au propriétaire (agences)</li></ul></div></div></div></details>
         <div class="price"><div><span class="amount">5 000 F</span> <span class="per">/ mois</span></div>
           <p class="year">Ou <b>50 000 F l'année</b> : 2 mois offerts</p></div>
         <div class="btns">
@@ -596,6 +637,7 @@ footer b{color:var(--ink)}
           <li><span>Feuilles pour les parents en <b>français, wolof ou arabe</b></span></li>
         </ul>
         <div class="extra"><strong>Inclus :</strong><span>une page publique pour faire connaître votre daara ou votre école.</span></div>
+        <details class="howto"><summary>Tout ce que fait l'app</summary><div class="howin"><p class="ht">Comment ça marche</p><ol class="hsteps"><li>Choisissez votre type : Daara, École franco-arabe ou École privée.</li><li>Créez vos classes et ajoutez vos élèves ou talibés, internes ou externes.</li><li>Chaque mois, encaissez les mensualités : l'app montre qui doit encore.</li><li>Notez les présences et les notes : l'app fait les bulletins.</li></ol><div class="hgroups"><div><p class="ht">Élèves</p><ul><li>Inscriptions et fiche d'inscription</li><li>Classes, maîtres et oustaz</li><li>Internes et externes</li></ul></div><div><p class="ht">Argent</p><ul><li>Mensualités et frais d'inscription, Wave ou Orange Money</li><li>Parents qui doivent, avec rappel</li><li>Reçus pour les parents</li><li>Dons en argent ou en nature</li><li>Dépenses (nourriture…) et salaires</li><li>Caisse du mois et bilan</li></ul></div><div><p class="ht">École</p><ul><li>Présences, absences, retards</li><li>Notes, moyennes, rang</li><li>Bulletins par trimestre ou semestre</li><li>PDF de toute la classe</li></ul></div><div><p class="ht">Parents et public</p><ul><li>Messages aux parents</li><li>Chaque feuille dans la langue du parent : français, wolof ou arabe</li><li>Page publique avec photos pour faire connaître l'établissement</li></ul></div></div></div></details>
         <div class="price"><div><span class="amount">5 000 F</span> <span class="per">/ mois</span></div>
           <p class="year">Ou <b>50 000 F l'année</b> : 2 mois offerts</p></div>
         <div class="btns">
@@ -628,11 +670,17 @@ footer b{color:var(--ink)}
           <li><span>Paiement espèces, <b>Wave</b> ou <b>Orange Money</b>, reçu envoyé au client</span></li>
           <li><span><b>Comptes</b> : recettes et dépenses de la voiture</span></li>
         </ul>
+        <details class="howto"><summary>Tout ce que fait l'app</summary><div class="howin"><p class="ht">Comment ça marche</p><ol class="hsteps"><li>Choisissez vos villes, vos trajets et vos prix : par place et voiture entière.</li><li>Mettez votre page de réservation en ligne et partagez-la sur WhatsApp.</li><li>Le client choisit le trajet, le jour, ses places et le paiement. Sa position GPS arrive avec la réservation.</li><li>Vous acceptez d'un geste : le client reçoit son reçu.</li></ol><div class="hgroups"><div><p class="ht">Voyages</p><ul><li>Départs à heures fixes ou à la demande</li><li>Places libres de chaque voiture</li><li>Course privée : toute la voiture</li></ul></div><div><p class="ht">Réservations</p><ul><li>Les réservations arrivent toutes seules dans l'app</li><li>Le téléphone sonne à chaque réservation</li><li>Point de départ et d'arrivée en GPS</li><li>Reçu envoyé au client</li></ul></div><div><p class="ht">Route</p><ul><li>Ordre des arrêts calculé tout seul (Pro)</li><li>Tournée ouverte dans Google Maps (Pro)</li><li>Feuille de route envoyée au chauffeur sur WhatsApp (Premium)</li></ul></div><div><p class="ht">Argent</p><ul><li>Espèces, Wave ou Orange Money</li><li>Recettes et dépenses</li><li>Comptes par véhicule (Premium)</li><li>Code à 4 chiffres pour protéger l'app</li></ul></div></div></div></details>
         <div class="price">
-          <div class="formulas">
-            <div class="formula"><span class="n">Essentiel</span><b>5 000 F</b><span>/ mois</span></div>
-            <div class="formula hi"><span class="n">Pro</span><b>10 000 F</b><span>/ mois</span></div>
-            <div class="formula"><span class="n">Premium</span><b>15 000 F</b><span>/ mois</span></div>
+          <div class="tiers">
+            <div class="tier"><div class="th"><span class="n">Essentiel</span><b>5 000 F</b><small>/ mois</small></div>
+              <ul><li><b>1 véhicule</b></li><li>Voyages, passagers et places libres</li><li>Page de réservation pour vos clients</li><li>Reçus envoyés au client, comptes</li></ul></div>
+            <div class="tier hi"><div class="th"><span class="n">Pro</span><b>10 000 F</b><small>/ mois</small></div>
+              <p class="plus">Tout l'Essentiel, plus :</p>
+              <ul><li>Jusqu'à <b>3 véhicules</b></li><li><b>Itinéraire GPS</b> automatique : l'ordre des arrêts</li><li>Tournée ouverte dans Google Maps</li></ul></div>
+            <div class="tier"><div class="th"><span class="n">Premium</span><b>15 000 F</b><small>/ mois</small></div>
+              <p class="plus">Tout le Pro, plus :</p>
+              <ul><li><b>Véhicules sans limite</b></li><li><b>Chauffeurs</b> : feuille de route envoyée sur WhatsApp</li><li>Comptes par véhicule</li></ul></div>
           </div>
         </div>
         <div class="btns">
